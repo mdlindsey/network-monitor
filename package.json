@@ -160,7 +160,7 @@
   },
   "build": {
     "productName": "Network Monitor",
-    "appId": "org.erb.NetworkMonitor",
+    "appId": "com.app.networkmonitor",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
