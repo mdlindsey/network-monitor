@@ -1,6 +1,24 @@
 .health-dashboard {
     width: 700px;
     margin: auto;
+    position: relative;
+}
+
+.clear-history {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.loading-placeholder {
+    padding: 100px 0 300px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.network-devices {
+    max-height: 60vh;
+    overflow-y: scroll;
 }
 
 .network-devices,

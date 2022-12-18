@@ -1,7 +1,9 @@
 import { CSSProperties } from 'react'
 import { Chart } from 'react-charts'
 
-const LineChart = ({ values, style }:{ values: number[], style?: CSSProperties }) => {
+type Label = string | number | Date
+
+const LineChart = ({ values, labels=[], style }:{ values: number[], labels?: Label[], style?: CSSProperties }) => {
     if (!values?.length) {
         return null
     }
@@ -9,9 +11,14 @@ const LineChart = ({ values, style }:{ values: number[], style?: CSSProperties }
         <div style={{ width: 600, height: 400, ...(style||{}), position: 'relative' }}>
             <Chart
                 options={{
-                    primaryAxis: { getValue: d => d.primary },
-                    secondaryAxes: [{ getValue: d => d.secondary }],
-                    data: [ { data: values.map((v,i) => ({ primary: i, secondary: v })) } ]
+                    primaryAxis: { getValue: d => d.primary, elementType: 'line' },
+                    secondaryAxes: [{ getValue: d => d.secondary, elementType: 'line' }],
+                    data: [{
+                        data: values.map((v,i) => ({
+                            primary: labels[i] === labels[i-1] ? '' : labels[i] || i,
+                            secondary: v,
+                        }))
+                    }]
                 }}
             />
         </div>

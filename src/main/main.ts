@@ -14,7 +14,7 @@ import { autoUpdater } from 'electron-updater'
 import log from 'electron-log'
 // import MenuBuilder from './menu'
 import { resolveHtmlPath } from './util'
-import healthCheck, { API } from './api'
+import { API } from '../api'
 
 class AppUpdater {
   constructor() {
@@ -32,8 +32,16 @@ ipcMain.on('maclookup', async (event, mac) => {
 })
 
 ipcMain.on('healthcheck', async (event, arg) => {
-  const res = await healthCheck()
-  event.reply('healthcheck', res)
+  const result:any = {
+    startTime: new Date().getTime()
+  }
+  await Promise.all([
+    API.LAN().then(res => result.lan = res),
+    API.WWW().then(res => result.www = res),
+    API.Ping('google.com', 1).then(p => result.pings = p),
+  ])
+  result.finishTime = new Date().getTime()
+  event.reply('healthcheck', result)
 })
 
 ipcMain.on('ipc-example', async (event, arg) => {
