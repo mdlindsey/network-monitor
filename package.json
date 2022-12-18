@@ -47,6 +47,9 @@
     ]
   },
   "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
+    ],
     "moduleDirectories": [
       "node_modules",
       "release/app/node_modules",
