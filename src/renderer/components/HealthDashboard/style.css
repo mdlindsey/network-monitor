@@ -1,0 +1,28 @@
+.health-dashboard {
+    width: 700px;
+    margin: auto;
+}
+
+.network-devices,
+.network-devices li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.85em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.network-devices li:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+.network-devices li span {
+    display: inline-block;
+    width: 14em;
+    padding: 3px 0;
+}
+.network-devices li span:first-of-type {
+    width: 14em;
+}
+.network-devices li span:last-of-type {
+    width: calc(100% - 28em);
+}
