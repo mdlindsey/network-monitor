@@ -67,8 +67,7 @@ const HealthDashboard = () => {
   }
 
   return (
-    <div className="health-dashboard">
-      <h1>Network Monitor</h1>
+    <>
       <button onClick={() => setHealthChecks([])} className="clear-history">Clear history</button>
       { !error ? null : <h3>Error: {error}</h3> }
       {
@@ -116,6 +115,7 @@ const HealthDashboard = () => {
               </ul>
             )
           }
+          
           </>
         )
       }
@@ -135,7 +135,7 @@ const HealthDashboard = () => {
           </>
         )
       }
-    </div>
+    </>
   )
 }
 

@@ -54,3 +54,37 @@ a:hover {
   text-decoration: none;
 }
 
+.health-dashboard {
+  width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+
+
+.clear-history {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.loading-placeholder {
+    padding: 100px 0 300px;
+    text-align: center;
+    font-size: 32px;
+}
+
+h3 {
+  margin-top: 32px;
+}
+
+.dashboard-switch {
+  cursor: pointer;
+  margin-top: -24px;
+  color: rgba(255, 255, 255, 0.5);
+  width: 12em;
+}
+
+.dashboard-switch:hover {
+  color: #fff;
+}

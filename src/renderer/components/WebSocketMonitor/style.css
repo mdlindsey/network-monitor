@@ -1,0 +1,41 @@
+
+.ws-ledger {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: 10vh;
+    overflow-y: scroll;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    width: 30em;
+}
+
+.ws-ledger li {
+    padding: 2px 0;
+}
+
+.ws-ledger li .ack {
+    position: relative;
+    bottom: -1px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    background: #333;
+    border-radius: 50%;
+}
+.ws-ledger li .ack.yes {
+    background: #7a7;
+}
+
+.ws-ledger > li > .time {
+    display: inline-block;
+    text-align: center;
+    width: 4em;
+}
+
+.ws-ledger > li > .time:last-child {
+    margin-left: 2em;
+    width: 12em;
+    text-align: left;
+}
